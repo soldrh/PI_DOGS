@@ -7,6 +7,28 @@ module.exports = (sequelize) => {
     name: {
       type: DataTypes.STRING,
       allowNull: false,
+      },
+    id: {
+      type: DataTypes.UUID,
+      allowNull: false,
+      primaryKey: true
     },
+    height: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    weigth: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    life_span: {
+      type: DataTypes.STRING,
+      allowNull: true
+    },
+    createdInDb: {
+      type: DataTypes.BOOLEAN,
+      allowNull: false,
+      defaultValue: true
+    }
   });
 };
