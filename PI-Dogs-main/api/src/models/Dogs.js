@@ -11,13 +11,23 @@ module.exports = (sequelize) => {
     id: {
       type: DataTypes.UUID,
       allowNull: false,
-      primaryKey: true
+      unique: true,
+      primaryKey: true,
+      defaultValue: DataTypes.UUIDV4
     },
-    height: {
+    heightMin: {
       type: DataTypes.STRING,
       allowNull: false
     },
-    weight: {
+    heightMax: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    weightMin: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    weightMax: {
       type: DataTypes.STRING,
       allowNull: false
     },
@@ -25,10 +35,14 @@ module.exports = (sequelize) => {
       type: DataTypes.STRING,
       allowNull: true
     },
-    createdInDb: {
+      createdInDb: {
       type: DataTypes.BOOLEAN,
       allowNull: false,
-      defaultValue: true
+      defaultValue: true,
+    },
+    image: {
+      type: DataTypes.STRING,
+      allowNull: true
     }
   });
 };
